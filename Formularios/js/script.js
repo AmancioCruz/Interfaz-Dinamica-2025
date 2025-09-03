@@ -8,7 +8,7 @@ function crearimagen(event){
         contenedor.classList.add("contenedor");
         
         const imagen = new Image();
-        imagen.src = "../recursos/pikachu.jpg";
+        imagen.src = "https://raw.githubusercontent.com/AmancioCruz/Interfaz-Dinamica-2025/refs/heads/main/Formularios/recursos/pikachu.jpg";
         imagen.classList.add("imagen-nueva");
         
         const titulo = document.createElement("h2");

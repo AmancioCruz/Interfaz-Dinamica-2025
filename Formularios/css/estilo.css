@@ -16,3 +16,15 @@
     display: flex;
     flex-direction: column;
 }
+
+.contenedor_formulario_producto_nuevo{
+    padding: 10px 10px 10px ;
+    background-color: cadetblue;
+    width: 30vw;
+}
+
+#formulario_producto_nuevo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

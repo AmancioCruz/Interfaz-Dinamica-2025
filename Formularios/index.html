@@ -8,8 +8,8 @@
 </head>
 <body>
     <form id="formulario_dinamico" class="formulario_dinamico">
-        <label for="Cantidad">Ingresa cantidad de elementos</label>
-        <input type="number" name="Cantidad" id="cantidad" onchange="crearimagen(event)">
+        <!--label for="Cantidad">Ingresa cantidad de elementos</label-->
+        <!--input type="number" name="Cantidad" id="cantidad" onchange="crearimagen(event)"-->
         <div id="elementos" class="elementos">
             <!--div class="contenedor">
                 <img src="recursos/pikachu.jpg" class="imagen-nueva">
@@ -36,17 +36,18 @@
     <input type="button" value="Agregar producto" onclick="">
     <div class="contenedor_formulario_producto_nuevo">
         <form id="formulario_producto_nuevo">
-            <!--label for="Imagen"></label>
-            <input type="file" name="Imagen" id="imagen_producto"-->
+            <img id="imagen-file" class="imagen-previsulizacion" src="recursos/default.png">
+            <label for="Imagen"></label>
+            <input type="file" name="Imagen" id="imagen_producto" onchange="obtenerImagen(event)">
 
             <label for="Nombre">Nombre</label>
-            <input type="text" name="Nombre" id="nombre_producto">
+            <input type="text" name="Nombre" id="nombre_producto" required>
 
             <label for="Descripcion">Descripcion</label>
-            <textarea name="Descripcion" id="descripcion"></textarea>
+            <textarea name="Descripcion" id="descripcion" required></textarea>
 
             <label for="Precio">Precio</label>
-            <input type="number" name="Precio" id="precio">
+            <input type="number" name="Precio" id="precio" required>
         </form>
         <button onclick="AgregarProducto(event)">Agregar</button>
     </div>

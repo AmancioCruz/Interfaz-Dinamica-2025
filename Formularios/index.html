@@ -1,57 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estilo.css">
-    <title>Formularios Dinammicos</title>
-</head>
-<body>
-    <form id="formulario_dinamico" class="formulario_dinamico">
-        <!--label for="Cantidad">Ingresa cantidad de elementos</label-->
-        <!--input type="number" name="Cantidad" id="cantidad" onchange="crearimagen(event)"-->
-        <div id="elementos" class="elementos">
-            <!--div class="contenedor">
-                <img src="recursos/pikachu.jpg" class="imagen-nueva">
-                <h2>pikachu.jpg</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, 
-                    consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.!
-                </p>
-                <button>Leer mas</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/estilo.css">
+        <title>Formularios Dinammicos</title>
+    </head>
+    <body>
+        <nav class="barra-navegacion">
+            <div class="elemento-navegacion">
+                <a href="#">
+                    <span>Inicio</span>
+                </a>
+                <a href="#">
+                    <span>Categorias</span>
+                </a>
+                <a href="#">
+                    <span>Carrito de compras</span>
+                </a>
+                <a href="#">
+                    <span>Iniciar Sesion</span>
+                </a>
             </div>
-            <div class="contenedor">
-                <img src="recursos/pikachu.jpg" class="imagen-nueva">
-                <h2>pikachu.jpg</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, 
-                    consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.!
-                </p>
-                <button>Leer mas</button>
-            </div-->
+        </nav>
+
+        <div id="elementos" class="elementos">
+
         </div>
-    </form>
-    <input type="button" value="Agregar producto" onclick="">
-    <div class="contenedor_formulario_producto_nuevo">
-        <form id="formulario_producto_nuevo">
-            <img id="imagen-file" class="imagen-previsulizacion" src="recursos/default.png">
-            <label for="Imagen"></label>
-            <input type="file" name="Imagen" id="imagen_producto" onchange="obtenerImagen(event)">
 
-            <label for="Nombre">Nombre</label>
-            <input type="text" name="Nombre" id="nombre_producto" required>
+        <div id="contenedor_formulario_producto_nuevo"
+            class="contenedor_formulario_producto_nuevo">
+            <form id="formulario_producto_nuevo">
+                <img id="imagen-file" class="imagen-previsulizacion"
+                    src="recursos/default.png">
+                <label for="Imagen"></label>
+                <input type="file" name="Imagen" id="imagen_producto"
+                    onchange="obtenerImagen(event)">
 
-            <label for="Descripcion">Descripcion</label>
-            <textarea name="Descripcion" id="descripcion" required></textarea>
+                <label for="Nombre">Nombre</label>
+                <input type="text" name="Nombre" id="nombre_producto" required>
 
-            <label for="Precio">Precio</label>
-            <input type="number" name="Precio" id="precio" required>
-        </form>
-        <button onclick="AgregarProducto(event)">Agregar</button>
-    </div>
-</body>
-<script src="js/script.js"></script>
-<script src="js/formulario.js"></script>
+                <label for="Descripcion">Descripcion</label>
+                <textarea name="Descripcion" id="descripcion"
+                    required></textarea>
+
+                <label for="Precio">Precio</label>
+                <input type="number" name="Precio" id="precio" required>
+            </form>
+            <button onclick="AgregarProducto(event)">Agregar</button>
+        </div>
+
+        <input class="boton-agregar-producto" type="button"
+            value="Agregar producto" onclick="mostrarFormularioAgregarProducto()">
+    </body>
+    <script src="js/script.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="js/fetch.js"></script>
 </html>

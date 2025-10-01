@@ -1,39 +1,146 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body{
-    width: 100vw;
-    height: 100vh;
-    margin: auto;
-    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
-.contenedor-formulario-agregar{
-    width: 400px;
-    padding: 10px;
-    background-color:cadetblue;
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+    line-height: 1.5;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.contenedor-formulario-agregar {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#formulario_agregar {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
+    gap: 15px;
+    margin-bottom: 20px;
 }
-.contenedor-formulario-agregar form{
+
+#formulario_agregar div {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+#boton_agregar {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s;
     width: 100%;
 }
 
-.contenedor-formulario-agregar form div input[type="text"]{
-    width: 100%;
-    padding: 5px;
-    border: none;
-    margin-top: 10px;
+#boton_agregar:hover {
+    background: #2980b9;
+}
+
+.contenedor-elementos-juegos {
+    display: grid;
+    gap: 20px;
+    padding: 10px;
+}
+
+@media (min-width: 1024px) {
+    .contenedor-elementos-juegos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .contenedor-elementos-juegos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .contenedor-elementos-juegos {
+        grid-template-columns: 1fr;
+    }
+}
+
+.elemento-lista-juegos {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.elemento-lista-juegos h2 {
+    color: #2c3e50;
     margin-bottom: 10px;
+    font-size: 1.3rem;
 }
 
-.contenedor-formulario-agregar button{
-    width: 100%;
+.elemento-lista-juegos p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.editar,
+.eliminar {
+    padding: 10px 15px;
     border: none;
-    background: green;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.editar {
+    background: #f39c12;
+    color: white;
+}
+
+.eliminar {
+    background: #e74c3c;
+    color: white;
+}
+
+.editar:hover {
+    background: #e67e22;
+}
+
+.eliminar:hover {
+    background: #c0392b;
 }

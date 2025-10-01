@@ -77,24 +77,6 @@ input:focus {
     padding: 10px;
 }
 
-@media (min-width: 1024px) {
-    .contenedor-elementos-juegos {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .contenedor-elementos-juegos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .contenedor-elementos-juegos {
-        grid-template-columns: 1fr;
-    }
-}
-
 .elemento-lista-juegos {
     background: white;
     padding: 20px;
@@ -143,4 +125,22 @@ input:focus {
 
 .eliminar:hover {
     background: #c0392b;
+}
+
+@media (min-width: 1024px) {
+    .contenedor-elementos-juegos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .contenedor-elementos-juegos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .contenedor-elementos-juegos {
+        grid-template-columns: 1fr;
+    }
 }

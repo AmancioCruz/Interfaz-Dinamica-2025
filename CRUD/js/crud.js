@@ -13,6 +13,7 @@ let videojuegos = [
     new Videojuego(9, "Pokémon Leyendas: Arceus", "Rompe con la fórmula tradicional con exploración abierta en la antigua Sinnoh."),
     new Videojuego(10, "Pokémon Escarlata y Púrpura", "Primer juego completamente de mundo abierto ambientado en la región de Paldea.")
 ];
+console.log(videojuegos);
 //CRUD
 //Crear elementos
 //Leer elementos

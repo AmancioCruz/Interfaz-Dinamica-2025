@@ -32,18 +32,45 @@ export class GestorVideojuegos {
             console.log(this.listaVideojuego);
         }
         catch (error) {
-            console.log(error);
             return error;
         }
     }
     //
-    ObtenerListaDeVideojuegos(){
+    ObtenerListaDeVideojuegos() {
         //debe retornar toda la lista de videojuego si esta ya se inicializo
+        try {
+            if (!this.listaVideojuego)
+                throw new Error('La lista de videojuegos no ha sido inicializada');
+            return this.listaVideojuego;
+        }
+        catch (error) {
+            return error;
+        }
     }
     //
-    ObtenerVideojuegoPorID(){
+    ObtenerVideojuegoPorID(id) {
         //debe retornar un videojuego siempre que le usuario le hay amandado el id
         //debe validar que el videojuego exista si no solo que diga (lanzar un error) que no se encontro
+        try {
+            if (!this.listaVideojuego)
+                throw new Error('La lista de videojuegos no ha sido inicializada');
+            
+            const videojuego = this.listaVideojuego.find(videojuego => videojuego.id === id);
+
+            for(let i =0;i<this.listaVideojuego.length; i++){
+                if(this.listaVideojuego[i].id === id){
+                    return this.listaVideojuego[i];
+                }
+            }
+
+            if (!videojuego)
+                throw new Error(`No se encontró un videojuego con el id: ${id}`);
+
+            return videojuego;
+        }
+        catch (error) {
+            return error;
+        }
     }
 
 }

@@ -56,19 +56,52 @@ export class GestorVideojuegos {
                 throw new Error('La lista de videojuegos no ha sido inicializada');
             
             const videojuego = this.listaVideojuego.find(videojuego => videojuego.id === id);
-
-            for(let i =0;i<this.listaVideojuego.length; i++){
-                if(this.listaVideojuego[i].id === id){
-                    return this.listaVideojuego[i];
-                }
-            }
-
+            
             if (!videojuego)
                 throw new Error(`No se encontró un videojuego con el id: ${id}`);
 
             return videojuego;
         }
         catch (error) {
+            return error;
+        }
+    }
+    //Actulizar datos 
+    ActualizarDatosVideojuego(id, videojuego_actualizado) {
+        try {
+            if (!videojuego_actualizado)
+                throw new Error('No se ha inicializado la lista de videojuegos');
+            const indice = this.listaVideojuego.findIndex(
+                videojuego => videojuego.id === id
+            );
+            if (indice === -1) {
+                throw new Error('No se ha encontrado el ID en la lista de videojuegos');
+            }
+            this.listaVideojuego[indice] = videojuego_actualizado;
+        }
+        catch (error) {
+            console.log(error);
+            return error;
+        }
+    }
+    // realizar el metodo para Eliminar 
+    EliminarVideojuegoPorID(id){
+        try{
+            if(!this.listaVideojuego)
+                throw new Error('No se ha cargado la lista de videojuegos');
+            
+            console.log(this.listaVideojuego); 
+
+            const indice = this.listaVideojuego.findIndex(
+                videojuego => videojuego.id === id
+            );
+
+            if(indice === -1)
+                throw new Error('No se ha encontrado el elemento con el ID: ', id);
+            this.listaVideojuego.splice(indice, 1);
+        }
+        catch(error){
+            console.log(error);
             return error;
         }
     }

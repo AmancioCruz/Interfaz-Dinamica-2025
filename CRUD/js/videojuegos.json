@@ -1,0 +1,102 @@
+[ 
+  {
+    "id": 1,
+    "titulo": "The Legend of Zelda: Breath of the Wild",
+    "descripcion": "Explora un vasto mundo abierto y enfrenta a Ganon en Hyrule."
+  },
+  {
+    "id": 2,
+    "titulo": "God of War",
+    "descripcion": "Kratos y Atreus viajan por la mitología nórdica en una historia intensa."
+  },
+  {
+    "id": 3,
+    "titulo": "Minecraft",
+    "descripcion": "Construye, explora y sobrevive en un mundo generado por bloques."
+  },
+  {
+    "id": 4,
+    "titulo": "Red Dead Redemption 2",
+    "descripcion": "Vive el viejo oeste en una historia de forajidos y libertad."
+  },
+  {
+    "id": 5,
+    "titulo": "Super Mario Odyssey",
+    "descripcion": "Acompaña a Mario por diversos reinos con la ayuda de su gorra mágica."
+  },
+  {
+    "id": 6,
+    "titulo": "The Witcher 3: Wild Hunt",
+    "descripcion": "Sigue a Geralt de Rivia en su misión para encontrar a Ciri y enfrentar a la Cacería Salvaje."
+  },
+  {
+    "id": 7,
+    "titulo": "Elden Ring",
+    "descripcion": "Explora las Tierras Intermedias en una oscura aventura de fantasía creada por FromSoftware."
+  },
+  {
+    "id": 8,
+    "titulo": "Hollow Knight",
+    "descripcion": "Explora el reino de Hallownest en este metroidvania lleno de secretos y enemigos desafiantes."
+  },
+  {
+    "id": 9,
+    "titulo": "Grand Theft Auto V",
+    "descripcion": "Sigue las historias entrelazadas de tres criminales en Los Santos."
+  },
+  {
+    "id": 10,
+    "titulo": "Celeste",
+    "descripcion": "Ayuda a Madeline a escalar una montaña enfrentando sus propios miedos."
+  },
+  {
+    "id": 11,
+    "titulo": "Stardew Valley",
+    "descripcion": "Crea y gestiona tu granja mientras te integras en la comunidad local."
+  },
+  {
+    "id": 12,
+    "titulo": "Dark Souls III",
+    "descripcion": "Una aventura desafiante en un mundo oscuro y melancólico."
+  },
+  {
+    "id": 13,
+    "titulo": "Resident Evil 4",
+    "descripcion": "Leon S. Kennedy intenta rescatar a la hija del presidente de una secta misteriosa."
+  },
+  {
+    "id": 14,
+    "titulo": "Fortnite",
+    "descripcion": "Juego de batalla real con construcción, acción y eventos en vivo."
+  },
+  {
+    "id": 15,
+    "titulo": "Overwatch",
+    "descripcion": "Shooter por equipos con héroes únicos y habilidades especiales."
+  },
+  {
+    "id": 16,
+    "titulo": "Among Us",
+    "descripcion": "Descubre al impostor en esta experiencia multijugador de engaño."
+  },
+  {
+    "id": 17,
+    "titulo": "Animal Crossing: New Horizons",
+    "descripcion": "Crea tu isla perfecta, haz amigos y decora en este relajante simulador."
+  },
+  {
+    "id": 18,
+    "titulo": "Cyberpunk 2077",
+    "descripcion": "Sumérgete en Night City como V, un mercenario mejorado cibernéticamente."
+  },
+  {
+    "id": 19,
+    "titulo": "Assassin’s Creed Valhalla",
+    "descripcion": "Conquista Inglaterra como un vikingo en la saga de Eivor."
+  },
+  {
+    "id": 20,
+    "titulo": "Call of Duty: Modern Warfare",
+    "descripcion": "Acción militar intensa en una guerra moderna con campaña y multijugador."
+  }
+]

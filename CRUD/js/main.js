@@ -1,3 +1,5 @@
+import { convertir_de_JSON_a_Objeto, convertir_de_Objeto_a_JSON } from "./ayudad.js";
+import { crearElementoVista } from "./crud.js";
 import { Videojuego } from "./definiciones.js";
 import { GestorVideojuegos } from "./gestorVideojuegos.js";
 
@@ -19,7 +21,44 @@ let videojuegos = [
     new Videojuego(10, "Pokémon Escarlata y Púrpura", "Primer juego completamente de mundo abierto ambientado en la región de Paldea.")
 ];
 
-const gestorVideojuegos = new GestorVideojuegos();
-gestorVideojuegos.CargarListaVideojuegos(videojuegos);
+const datos = [
+    {
+        "id": 1,
+        "titulo": "The Legend of Zelda: Breath of the Wild",
+        "descripcion": "Explora un vasto mundo abierto y enfrenta a Ganon en Hyrule."
+    },
+    {
+        "id": 2,
+        "titulo": "God of War",
+        "descripcion": "Kratos y Atreus viajan por la mitología nórdica en una historia intensa."
+    }
+]
 
-gestorVideojuegos.AgregarNuevoVideojuego(new Videojuego(11,'Elemplo','lorem'));
+const gestorVideojuegos = new GestorVideojuegos();
+gestorVideojuegos.CargarListaVideojuegos(await convertir_de_JSON_a_Objeto('js/videojuegos.json'));
+
+//gestorVideojuegos.AgregarNuevoVideojuego(new Videojuego(11,'Elemplo','lorem'));
+
+//gestorVideojuegos.ActualizarDatosVideojuego(11, new Videojuego(11,'Elemplo','lorem'));
+
+//console.log(await convertir_de_JSON_a_Objeto('js/videojuegos.json'));
+//console.log(convertir_de_Objeto_a_JSON(videojuegos));
+
+gestorVideojuegos.ObtenerVideojuegoPorID(2)
+
+//crear sus metodos para:
+//crear toda la lista de videojuegos
+
+gestorVideojuegos.EliminarVideojuegoPorID(3);
+
+function crearListaVideojuegos() {
+    gestorVideojuegos.listaVideojuego.forEach(elemento => {
+        crearElementoVista(elemento.titulo, elemento.descripcion);
+    });
+}
+
+//sincronizar las funciones del gestor de videojuegos, con los botones que ya se generaron en la vista
+//agregar, actualizar y elminar
+
+
+crearListaVideojuegos();

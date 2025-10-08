@@ -65,7 +65,7 @@ function eliminar_videojuego(id) {
     }
 }
 
-const crearElementoVista = (titulo_videojuego, descripcion_videojuego) => {
+export const crearElementoVista = (titulo_videojuego, descripcion_videojuego) => {
     const elemento = document.createElement('div');
     elemento.classList.add("elemento-lista-juegos");
 

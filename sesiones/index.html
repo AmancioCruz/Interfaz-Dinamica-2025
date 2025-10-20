@@ -11,18 +11,19 @@
             <form id="formulario_inicio_sesion" action>
                 <div class="elemento-formulario">
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" name="correo" required>
+                    <input type="email" name="correo">
                 </div>
 
                 <div class="elemento-formulario">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" name="contraseña" required>
+                    <input type="password" name="contraseña">
                 </div>
-                <button>
+                <button onclick="iniciarSesion(event)">
                     <i class="fa-solid fa-right-to-bracket"></i> Iniciar sesión
                 </button>
             </form>
-
         </div>
+        <script src="js/script.js"></script>
     </body>
+
 </html>

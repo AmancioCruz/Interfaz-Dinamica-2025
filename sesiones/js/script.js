@@ -1,12 +1,8 @@
-const usuario = {
-    correo: 'amancio@gmail.com',
-    contraseña: '12345678'
-}
-const formulario = document.querySelector("#formulario_inicio_sesion")
-function iniciarSesion(event) {
+import { iniciarSesion, obtenerSesionActiva } from "./sesiones.js";
+
+function iniciarSesio(event) {
     event.preventDefault();
-    const datos = new FormData(formulario);
-    const datos_usuario = Object.fromEntries(datos.entries());
+    
 
     if (datos_usuario.correo && datos_usuario.contraseña) {
         //una vez se valida que el usuario haya ingresado los dos campos se inicia la sesion
@@ -25,3 +21,9 @@ function iniciarSesion(event) {
 function cerrarSesion(){
     localStorage.removeItem('usuario');
 }
+
+iniciarSesion("amancio@gmail.com","12345678");
+
+obtenerSesionActiva();
+
+//cargarJSON('../datos/usuarios.json');

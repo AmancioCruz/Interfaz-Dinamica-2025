@@ -1,0 +1,20 @@
+:root {
+  --color-fondo: #0E0E1A;
+  --color-contenedor: #1B1F2F;
+  --color-primario: #00E0FF;
+  --color-secundario: #FF4FD8;
+  --color-acento: #FFD33D;
+  --color-verde: #8CFF6E;
+  --texto-principal: #E9E9E9;
+  --texto-secundario: #A0A0A0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor-formulario{
+    background: rgba(0, 0, 0, .1);
+}

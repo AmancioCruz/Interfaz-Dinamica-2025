@@ -1,6 +1,6 @@
 //En este arschivio se gestionaran las sesiones 
-//-inicio de sesion, 
-//-cerrar sesion, 
+//-Inicio de sesion, 
+//-Cerrar sesion, 
 //-y saber si hay un usuario con una sesion activa
 
 export async function iniciarSesion(correo, contraseña) {

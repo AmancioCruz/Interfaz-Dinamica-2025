@@ -1,3 +1,30 @@
+:root {
+    --color-principal: #4a6fa5;
+    --color-principal-oscuro: #3a5a8a;
+    --color-principal-claro: #6d8cc0;
+    --color-principal-muy-claro: #f0f5ff;
+    
+    --color-secundario: #ff6b6b;
+    --color-accento: #4ecdc4;
+    --color-advertencia: #ffd166;
+    
+    --blanco: #ffffff;
+    --gris-claro: #f8f9fa;
+    --gris-medio: #e0e0e0;
+    --gris-oscuro: #555555;
+    --color-texto: #333333;
+    --color-borde: #c0c0c0;
+    
+    --fondo-degradado-inicio: #f5f7fa;
+    --fondo-degradado-fin: #c3cfe2;
+    --fondo-tarjeta: #ffffff;
+    
+    --color-hover: #3a5a8a;
+    --color-activo: #2d4668;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    --color-sombra-oscura: rgba(0, 0, 0, 0.15);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,10 +32,35 @@
 
 body{
     width: 100vw;
-    height: 100vh;
+    height: 99vh;    
+    display: flex;
+    flex-direction: row;
+}
+
+section, main{
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+}
+
+.menu-opciones{
+    background: var(--color-principal);
+    margin: auto;
+    display: grid;
+    grid-auto-flow: row;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.menu-opciones button{
+    height: 100%;
 }
 
 .canvas{
     border: 2px solid black;
-    margin-left: 100px;
+}
+
+.opciones-elemento{
+    border: 2px solid black ;
 }

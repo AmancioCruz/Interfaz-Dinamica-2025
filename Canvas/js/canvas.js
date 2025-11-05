@@ -2,6 +2,9 @@ import { Circulo, Cuadrado, Linea } from "./figuras.js";
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 let trazoIniciado = false;
+const figuras = [];
+let figura = null;
+let opcion = 'lapiz';
 let posicionesCursor = {
     iniciales: {
         x: '',
@@ -17,63 +20,104 @@ let posicionesCursor = {
     }
 }
 
-/*
-ctx.strokeStyle = "black";
-ctx.lineWidth = 10;
-ctx.fillStyle = "red";
-
-ctx.fillRect(300, 0, 200, 200);
-ctx.strokeRect(300, 0, 200, 200);
-
-ctx.beginPath();
-ctx.arc(800, 400, 100, 0, Math.PI);
-ctx.fill();
-ctx.stroke();
-
-ctx.beginPath();
-ctx.strokeStyle = "red";
-ctx.lineWidth = 10;
-ctx.fillStyle = "pink";
-ctx.arc(400, 400, 100, 0, Math.PI);
-ctx.fill();
-ctx.stroke();*/
-
+document.querySelector('#boton_circulo').addEventListener('click', () => {
+    opcion = 'circulo';
+});
+document.querySelector("#boton_cuadrado").addEventListener('click', () => {
+    opcion = 'cadrado';
+});
+document.querySelector("#boton_lapiz").addEventListener('click', () => {
+    opcion = 'lapiz';
+});
+document.querySelector("#boton_linea").addEventListener('click', () => {
+    opcion = 'linea';
+});
+document.querySelector("#boton_sticker").addEventListener('click', () => {
+    opcion = 'sitcker';
+});
+document.querySelector("#boton_borrador").addEventListener('click', () => {
+    opcion = 'borrador';
+});
+document.querySelector("#boton_limpiar").addEventListener('click', () => {
+});
+document.querySelector("#boton_deshacer").addEventListener('click', () => {
+});
 
 canvas.addEventListener('mousedown', (event) => {
-    console.log('Se hizo click', registrarPosicionCursor(event));
     trazoIniciado = true;
     posicionesCursor.iniciales = registrarPosicionCursor(event);
 });
 
 canvas.addEventListener('mousemove', (event) => {
-    //console.log('el cursor esta sobre el canvas', registrarPosicionCursor(event));
-    /*if (trazoIniciado) {
-        posicionesCursor.actuales = registrarPosicionCursor(event);
+    posicionesCursor.actuales = registrarPosicionCursor(event);
 
-        const linea = new Linea(posicionesCursor.iniciales.x, posicionesCursor.iniciales.y,
-            posicionesCursor.actuales.x, posicionesCursor.actuales.y, 'black', 5);
-        linea.dibujar(ctx);
+    if (trazoIniciado) {
 
-        posicionesCursor.iniciales = registrarPosicionCursor(event);
-    }*/
+        console.log('opcion seleccionada', opcion);
+        switch (opcion) {
+            case 'lapiz':
+                const posicionesTemporalesIniciales = registrarPosicionCursor(event);
+                const posicionesTemporalesFinales = registrarPosicionCursor(event);   
+                break;
+            case 'cadrado':
+                figura = new Cuadrado(posicionesCursor.iniciales.x, posicionesCursor.iniciales.y,
+                    posicionesCursor.actuales.x, posicionesCursor.actuales.y, 'blue', 'green', 5);
+                break;
+            case 'circulo':
+                figura = new Circulo(posicionesCursor.iniciales.x, posicionesCursor.iniciales.y,
+                    posicionesCursor.actuales.x, posicionesCursor.actuales.y, "blue", "green", 5);
+                break;
+            case 'linea':
+                figura = new Linea(posicionesCursor.iniciales.x, posicionesCursor.iniciales.y,
+                    posicionesCursor.actuales.x, posicionesCursor.actuales.y, 'green', 5)
+                break;
+            case 'sitcker':
+                break;
+            default:
+                break;
+        }
+
+
+
+        if (figura && opcion !== 'lapiz') {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            renderizarFiguras();
+            figura.dibujar(ctx);
+            figura = null;
+        }
+
+    }
 });
 
 canvas.addEventListener('mouseup', (event) => {
-    console.log('se dejo de hacer click', registrarPosicionCursor(event));
     posicionesCursor.finales = registrarPosicionCursor(event);
 
-    /*const figura = new Cuadrado(posicionesCursor.iniciales.x, posicionesCursor.iniciales.y,
-        posicionesCursor.finales.x, posicionesCursor.finales.y, "blue", "green", 5);
-    figura.dibujar(ctx);*/
+    switch (opcion) {
+        case 'lapiz':
+            break;
+        case 'cadrado':
+            figura = new Cuadrado(posicionesCursor.iniciales.x, posicionesCursor.iniciales.y,
+                posicionesCursor.finales.x, posicionesCursor.finales.y, 'blue', 'green', 5);
+            break;
+        case 'circulo':
+            figura = new Circulo(posicionesCursor.iniciales.x, posicionesCursor.iniciales.y,
+                posicionesCursor.finales.x, posicionesCursor.finales.y, "blue", "green", 5);
+            break;
+        case 'linea':
+            figura = new Linea(posicionesCursor.iniciales.x, posicionesCursor.iniciales.y, 
+                posicionesCursor.finales.x, posicionesCursor.finales.y, 'green', 5)
+            break;
+        case 'sitcker':
+            break;
+        default:
+            break;
+    }
 
-    const figura = new Circulo(posicionesCursor.iniciales.x, posicionesCursor.iniciales.y, 
-        posicionesCursor.finales.x, posicionesCursor.finales.y, 'red', 'blue',5);
-    figura.dibujar(ctx);
+    if (figura != null)
+        figuras.push(figura);
 
+    renderizarFiguras();
     trazoIniciado = false;
-
-    //como hacer para dibujar un cuadrado haciendo click y arrastrando 
-    //y que se cree del tamaño en donde suelto el click
 });
 
 function registrarPosicionCursor(event) {
@@ -81,24 +125,10 @@ function registrarPosicionCursor(event) {
     return posicion;
 }
 
-function obtenerPosicionCursor(event) {
-    if (trazoIniciado) {
-        console.log(event.offsetX, "-", event.offsetY);
-        ctx.beginPath();
-        ctx.strokeStyle = "black";
-        ctx.lineWidth = 10;
-        ctx.fillStyle = "red";
-        ctx.fillRect(event.offsetX, event.offsetY, 100, 100);
-        ctx.strokeRect(event.offsetX, event.offsetY, 100, 100);
+function renderizarFiguras() {
+    if (figuras.length > 0) {
+        figuras.forEach(figura => {
+            figura.dibujar(ctx);
+        })
     }
-}
-
-function iniciar(event) {
-    console.log(event.offsetX, "-", event.offsetY);
-    trazoIniciado = true;
-}
-
-function finalizar(event) {
-    console.log(event.offsetX, "-", event.offsetY);
-    trazoIniciado = false;
 }
